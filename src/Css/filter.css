@@ -1,0 +1,60 @@
+.filter {
+    background-color: white;
+    padding: 20px 50px 20px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+}
+.filter h2{
+    font-size: 14px;
+    font-weight: normal;
+    color: black;
+    margin: 0 0 20px 0;
+}
+.filter .box {
+    margin: 0 0 20px 0;
+}
+.filter .box input{
+    -webkit-appearance: none;
+    appearance: none;
+}
+.filter .box label{
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.filter .box label::after,
+.filter .box label::before{
+    position: absolute;
+    margin-top: -10px;
+    top: 50%;
+    left: -10px;
+}
+
+.filter .box label::before{
+    content: '';
+    border: 1px solid gray;
+    width: 16px;
+    height: 16px;
+}
+
+.filter .box label::after{
+    font-family: "Font Awesome 6 Free";
+    content: "\f00c";
+    font-weight: 900;
+    font-size: 12px;
+    color: #2196f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0) rotate(360deg);
+    height: 18px;
+    width: 18px;
+    transition: 0.3s;
+}
+.filter .box .checked + label::after{
+    transform: scale(1);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #2196f3;
+}

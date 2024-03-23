@@ -2,6 +2,7 @@
 import './App.css';
 import Logo from './imgs/Logo.png'
 import Filter from './Components/Filter';
+import Page from './Components/Page'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       </div>
       <div className='container' >
         <Filter/>
+        <Page/>
       </div>
     </div>
   );

@@ -1,14 +1,16 @@
+import '../Css/filter.css'
+
 function Filter (){
     return (
         <>
             <div className="filter" >
                 <h2>КОЛИЧЕСТВО ПЕРЕСАДОК</h2>
                 <div className="box" >
-                    <input type="checkbox" id="all" checked />
+                    <input type="checkbox" className='checked' id="all" checked />
                     <label for='all' >Все</label>
                 </div>
                 <div className="box" >
-                    <input type="checkbox" id="zero" checked />
+                    <input type="checkbox" className='checked' id="zero" checked />
                     <label for='zero' >Без пересадок</label>
                 </div>
                 <div className="box" >

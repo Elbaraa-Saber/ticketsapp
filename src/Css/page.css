@@ -1,0 +1,33 @@
+.content{
+    flex: 1;
+}
+.content .choises {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.content .choises .choise {
+    background-color: white;
+    padding: 15px 20px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+.content .choises .choise:first-child {
+    border-right: transparent;
+}
+.content .choises .choise:last-child{
+    border-left: transparent;
+}
+.choises .choise button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    cursor: pointer;
+}
