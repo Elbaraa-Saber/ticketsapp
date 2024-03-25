@@ -1,12 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function TicketsNew (){
+    const [tickets, setTickets] = useState([]);
 
     useEffect (() => {
         fetch("https://raw.githubusercontent.com/Elbaraa-Saber/ticketsFakeApi/main/data.json")
         .then((response) => response.json())
-        .then((data) => console.log(data))
-    });
+        .then((data) => setTickets(data))
+        .then(() => console.log(tickets))
+    }, []);
 
     return(
         <div className="tickets" >
