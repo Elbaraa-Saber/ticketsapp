@@ -52,7 +52,7 @@
     width: 18px;
     transition: 0.3s;
 }
-.filter .box .checked + label::after{
+.filter .box .clicked + label::after{
     transform: scale(1);
     width: 16px;
     height: 16px;
