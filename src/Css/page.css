@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-around;
     margin-bottom: 20px;
+    gap: 5px;
 }
 .content .choises .choise {
     background-color: white;
@@ -16,6 +17,7 @@
     display: flex;
     border: 1px solid #eee;
     border-radius: 6px;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 20%)
 }
 .content .choises .choise:first-child {
     border-right: transparent;

@@ -1,18 +1,26 @@
 import { useEffect, useState } from "react";
+import Ticket from "./Ticket";
+import '../Css/tickets.css'
 
 function TicketsNew (){
     const [tickets, setTickets] = useState([]);
+    const apiUrl = "https://raw.githubusercontent.com/Elbaraa-Saber/ticketsFakeApi/main/data.json";
 
     useEffect (() => {
-        fetch("https://raw.githubusercontent.com/Elbaraa-Saber/ticketsFakeApi/main/data.json")
+        fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => setTickets(data))
-        .then(() => console.log(tickets))
     }, []);
 
     return(
         <div className="tickets" >
-            <h1>Flight Tickets</h1>
+            {tickets.map((ticket) => {
+                return(
+                    <div className="ticket" key={ticket.id}>
+                        <Ticket ticket={ticket}  />
+                    </div>
+                );
+            })}
         </div>
     );
 }
