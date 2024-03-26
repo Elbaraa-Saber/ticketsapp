@@ -3,8 +3,11 @@ import './Css/App.css';
 import Logo from './imgs/Logo.png'
 import Filter from './Components/Filter';
 import Page from './Components/Page'
+import { Routes, Route, link } from 'react-router';
 
 function App() {
+  
+
   return (
     <div className="App">
       <div className='logo' >
@@ -13,6 +16,8 @@ function App() {
       <div className='container' >
         <Filter/>
         <Page/>
+        
+
       </div>
     </div>
   );

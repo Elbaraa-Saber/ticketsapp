@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Ticket from "./Ticket";
-import '../Css/tickets.css';
 import SortTick from "./SortTick";
+import '../Css/tickets.css';
 
 
-function TicketsNew() {
+function TwoTrans() {
     const [tickets, setTickets] = useState([]);
     const [sortedTickets, setSortedTickets] = useState([]);
     const apiUrl = "https://raw.githubusercontent.com/Elbaraa-Saber/ticketsFakeApi/main/data.json";
@@ -62,15 +62,17 @@ function TicketsNew() {
             <SortTick onSortChange={sortTicketsBy} />
             <div className="tickets">
                 {(sortedTickets.length ? sortedTickets : tickets).map((ticket) => {
-                    return (
-                        <div className="ticket" key={ticket.id}>
+                    if(ticket.transfers === 2) {
+                        return (
+                            <div className="ticket" key={ticket.id}>
                             <Ticket ticket={ticket} />
-                        </div>
-                    );
+                            </div>
+                        );
+                    }
                 })}
             </div>
         </>
     );
 }
 
-export default TicketsNew;
+export default TwoTrans;

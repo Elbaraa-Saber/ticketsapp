@@ -1,70 +1,112 @@
-import '../Css/filter.css'
 import { useState } from 'react';
+import '../Css/filter.css';
+import { Link, useHistory, useNavigate } from 'react-router-dom';
 
-function Filter (){
-    const [isChecked, setIsChecked] = useState({
-        all: false,
+function Filter() {
+    const [selectedCheckbox, setSelectedCheckbox] = useState({
+        all: true,
         zero: false,
         one: false,
         two: false,
-        three: false
+        three: false,
     });
-
+    const navigate = useNavigate();
     const handleCheckboxClick = (id) => {
-        setIsChecked(prevState => ({
-            ...prevState,
-            [id]: !prevState[id]
-        }));
+        if (selectedCheckbox === id) {
+            // Do nothing if clicking on the same input
+            return;
+        }
+        setSelectedCheckbox(id);
     };
+    const handleLinkClick = (id) => {
+        setSelectedCheckbox(id); // Add class to input when link is clicked
+    };
+    const handleInputChange = (id) => {
+        handleCheckboxClick(id);
+        switch (id) {
+            case 'all':
+                navigate('/');
+                break;
+            case 'zero':
+                navigate('/zero');
+                break;
+            case 'one':
+                navigate('/one');
+                break;
+            case 'two':
+                navigate('/two');
+                break;
+            case 'three':
+                navigate('/three');
+                break;
+            default:
+                break;
+        }
+    };
+
 
     return (
         <>
-            <div className="filter" >
+            <div className="filter">
                 <h2>КОЛИЧЕСТВО ПЕРЕСАДОК</h2>
-                <div className="box" >
+                <div className="box">
                     <input
                         type="checkbox"
-                        className={isChecked.all ? 'clicked' : ''}
+                        className={selectedCheckbox === 'all' ? 'clicked' : ''}
                         id="all"
-                        onClick={() => handleCheckboxClick('all')}
-                    />
-                    <label htmlFor="all" >Все</label>
+                        onClick={() => handleInputChange('all')}
+                        />
+                    <label htmlFor="all">
+                        <Link to={"/"} className='link-style' onClick={() => handleLinkClick('all')}>Все</Link>
+                    </label>
                 </div>
-                <div className="box" >
+
+                <div className="box">
                     <input
                         type="checkbox"
-                        className={isChecked.zero ? 'clicked' : ''}
+                        className={selectedCheckbox === 'zero' ? 'clicked' : ''}
                         id="zero"
-                        onClick={() => handleCheckboxClick('zero')}
+                        onClick={() => handleInputChange('zero')}
                     />
-                    <label htmlFor="zero" >Без пересадок</label>
+                    <label htmlFor="zero">
+                        <Link to={"/zero"} className='link-style' onClick={() => handleLinkClick('zero')}>Без пересадок</Link>
+                    </label>
                 </div>
-                <div className="box" >
+
+                <div className="box">
                     <input
                         type="checkbox"
-                        className={isChecked.one ? 'clicked' : ''}
+                        className={selectedCheckbox === 'one' ? 'clicked' : ''}
                         id="one"
-                        onClick={() => handleCheckboxClick('one')}
+                        onClick={() => handleInputChange('one')}
                     />
-                    <label htmlFor="one" >1 пересадка</label>
+                    <label htmlFor="one">
+                    <Link to={"/one"} className='link-style' onClick={() => handleLinkClick('one')}>1 пересадка</Link>
+                    </label>
                 </div>
-                <div className="box" >
+
+                <div className="box">
                     <input
                         type="checkbox"
-                        className={isChecked.two ? 'clicked' : ''}
+                        className={selectedCheckbox === 'two' ? 'clicked' : ''}
                         id="two"
-                        onClick={() => handleCheckboxClick('two')}
+                        onClick={() => handleInputChange('two')}
                     />
-                    <label htmlFor="two" >2 пересадка</label>
+                    <label htmlFor="two">
+                        <Link to={"/two"} className='link-style' onClick={() => handleLinkClick('two')}>2 пересадка</Link>
+                    </label>
                 </div>
-                <div className="box" >
+
+                <div className="box">
                     <input
                         type="checkbox"
-                        className={isChecked.three ? 'clicked' : ''}
+                        className={selectedCheckbox === 'three' ? 'clicked' : ''}
                         id="three"
-                        onClick={() => handleCheckboxClick('three')}
+                        onClick={() => handleInputChange('three')}
                     />
-                    <label htmlFor="three" >3 пересадка</label>
+                    <label htmlFor="three">
+                        <Link to={"/three"} className='link-style' onClick={() => handleLinkClick('three')}>3 пересадка</Link>
+                    </label>
                 </div>
             </div>
         </>
