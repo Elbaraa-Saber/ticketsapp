@@ -38,7 +38,7 @@ function TicketsNew() {
             hours++; 
         }
 
-        return hours * 60 + roundedMinutes; // Return total minutes for easier comparison
+        return hours * 60 + roundedMinutes; 
     };
 
     const sortTicketsBy = (criteria) => {
@@ -48,7 +48,6 @@ function TicketsNew() {
             } else if (criteria === "time") {
                 const timeA = calculateTimeDifference(a);
                 const timeB = calculateTimeDifference(b);
-                // Sort if timeA is greater than timeB
                 return timeA > timeB ? 1 : timeA < timeB ? -1 : 0;
             }
             return 0;

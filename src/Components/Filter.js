@@ -27,7 +27,6 @@ function Filter() {
 
     const handleCheckboxClick = (id) => {
         if (selectedCheckbox[id]) {
-            // Do nothing if clicking on the same input
             return;
         }
         setSelectedCheckbox((prevState) => ({

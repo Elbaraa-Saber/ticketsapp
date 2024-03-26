@@ -38,7 +38,7 @@ function Tickets() {
                 <p>Date: {key}</p>
                 <p>Price: {data[key].price}</p>
                 <p>Airline: {data[key].airline}</p>
-                {/* Add other details you want to display */}
+                
                 </li>
             ))}
             </ul>
