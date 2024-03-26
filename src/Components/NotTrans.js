@@ -58,6 +58,7 @@ function NotTrans() {
 
     return (
         <>
+            <SortTick onSortChange={sortTicketsBy} />
             <div className="tickets">
                 {(sortedTickets.length ? sortedTickets : tickets).map((ticket) => {
                     if(ticket.transfers === 0) {

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import '../Css/filter.css';
-import { Link, useHistory, useNavigate } from 'react-router-dom';
+import { Link, useHistory, useNavigate, useLocation } from 'react-router-dom';
 
 function Filter() {
     const [selectedCheckbox, setSelectedCheckbox] = useState({
@@ -11,16 +11,36 @@ function Filter() {
         three: false,
     });
     const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        const path = location.pathname;
+        const updatedState = {
+            all: path === '/',
+            zero: path === '/zero',
+            one: path === '/one',
+            two: path === '/two',
+            three: path === '/three',
+        };
+        setSelectedCheckbox(updatedState);
+    }, [location.pathname]);
+
     const handleCheckboxClick = (id) => {
-        if (selectedCheckbox === id) {
+        if (selectedCheckbox[id]) {
             // Do nothing if clicking on the same input
             return;
         }
-        setSelectedCheckbox(id);
+        setSelectedCheckbox((prevState) => ({
+            ...prevState,
+            [id]: !prevState[id],
+        }));
     };
-    
+
     const handleLinkClick = (id) => {
-        setSelectedCheckbox(id); // Add class to input when link is clicked
+        setSelectedCheckbox((prevState) => ({
+            ...prevState,
+            [id]: true,
+        }));
     };
 
     const handleInputChange = (id) => {
@@ -66,7 +86,7 @@ function Filter() {
                 <div className="box">
                     <input
                         type="checkbox"
-                        className={selectedCheckbox === 'zero' ? 'clicked' : ''}
+                        className={selectedCheckbox.zero ? 'clicked' : '' || selectedCheckbox === 'zero' ? 'clicked' : ''}
                         id="zero"
                         onClick={() => handleInputChange('zero')}
                     />
@@ -78,7 +98,7 @@ function Filter() {
                 <div className="box">
                     <input
                         type="checkbox"
-                        className={selectedCheckbox === 'one' ? 'clicked' : ''}
+                        className={selectedCheckbox.one ? 'clicked' : '' || selectedCheckbox === 'one' ? 'clicked' : ''}
                         id="one"
                         onClick={() => handleInputChange('one')}
                     />
@@ -90,7 +110,7 @@ function Filter() {
                 <div className="box">
                     <input
                         type="checkbox"
-                        className={selectedCheckbox === 'two' ? 'clicked' : ''}
+                        className={selectedCheckbox.two ? 'clicked' : '' || selectedCheckbox === 'two' ? 'clicked' : ''}
                         id="two"
                         onClick={() => handleInputChange('two')}
                     />
@@ -102,7 +122,7 @@ function Filter() {
                 <div className="box">
                     <input
                         type="checkbox"
-                        className={selectedCheckbox === 'three' ? 'clicked' : ''}
+                        className={selectedCheckbox.three ? 'clicked' : '' || selectedCheckbox === 'three' ? 'clicked' : ''}
                         id="three"
                         onClick={() => handleInputChange('three')}
                     />
