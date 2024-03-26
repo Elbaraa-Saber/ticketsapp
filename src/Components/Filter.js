@@ -89,7 +89,7 @@ function Filter() {
                         className={selectedCheckbox.zero ? 'clicked' : '' || selectedCheckbox === 'zero' ? 'clicked' : ''}
                         id="zero"
                         onClick={() => handleInputChange('zero')}
-                    />
+                        />
                     <label htmlFor="zero">
                         <Link to={"/zero"} className='link-style' onClick={() => handleLinkClick('zero')}>Без пересадок</Link>
                     </label>
@@ -101,7 +101,7 @@ function Filter() {
                         className={selectedCheckbox.one ? 'clicked' : '' || selectedCheckbox === 'one' ? 'clicked' : ''}
                         id="one"
                         onClick={() => handleInputChange('one')}
-                    />
+                        />
                     <label htmlFor="one">
                     <Link to={"/one"} className='link-style' onClick={() => handleLinkClick('one')}>1 пересадка</Link>
                     </label>
@@ -113,7 +113,7 @@ function Filter() {
                         className={selectedCheckbox.two ? 'clicked' : '' || selectedCheckbox === 'two' ? 'clicked' : ''}
                         id="two"
                         onClick={() => handleInputChange('two')}
-                    />
+                        />
                     <label htmlFor="two">
                         <Link to={"/two"} className='link-style' onClick={() => handleLinkClick('two')}>2 пересадка</Link>
                     </label>
@@ -125,11 +125,12 @@ function Filter() {
                         className={selectedCheckbox.three ? 'clicked' : '' || selectedCheckbox === 'three' ? 'clicked' : ''}
                         id="three"
                         onClick={() => handleInputChange('three')}
-                    />
+                        />
                     <label htmlFor="three">
                         <Link to={"/three"} className='link-style' onClick={() => handleLinkClick('three')}>3 пересадка</Link>
                     </label>
                 </div>
+                
             </div>
         </>
     );

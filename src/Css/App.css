@@ -13,3 +13,49 @@
   gap: 30px;
   align-items: flex-start;
 }
+
+@media (max-width:1024px){
+  .container{
+    flex-wrap: wrap;
+  }
+  .container .filter{
+    width: 100%;
+  }
+}
+
+@media (max-width:768px){
+  .container .content .choises{
+    flex-wrap: wrap;
+  }
+  .container .content .choises .choise {
+    width: 100%;
+    text-align: center;
+  }
+  .container .content .ticket .price{
+    flex-wrap: wrap;
+  }
+  .container .content .ticket .price span:first-child{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .container .content .ticket .price img{
+    display: none;
+  }
+  .container .content .ticket .info{
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .container .content .ticket .info div{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+}
+
+
+@media (max-width:320px){
+  .container .filter .box label{
+    font-size: 12px;
+  }
+}
