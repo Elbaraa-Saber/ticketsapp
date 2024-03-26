@@ -18,9 +18,11 @@ function Filter() {
         }
         setSelectedCheckbox(id);
     };
+    
     const handleLinkClick = (id) => {
         setSelectedCheckbox(id); // Add class to input when link is clicked
     };
+
     const handleInputChange = (id) => {
         handleCheckboxClick(id);
         switch (id) {
@@ -52,7 +54,7 @@ function Filter() {
                 <div className="box">
                     <input
                         type="checkbox"
-                        className={selectedCheckbox === 'all' ? 'clicked' : ''}
+                        className={selectedCheckbox.all ? 'clicked' : '' || selectedCheckbox === 'all' ? 'clicked' : ''}
                         id="all"
                         onClick={() => handleInputChange('all')}
                         />
