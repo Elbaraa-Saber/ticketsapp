@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ticketsapp_ReactJS/static/css/main.58a234df.css",
-    "main.js": "/ticketsapp_ReactJS/static/js/main.cf1e7b4e.js",
+    "main.css": "/ticketsapp_ReactJS/static/css/main.b1ff1670.css",
+    "main.js": "/ticketsapp_ReactJS/static/js/main.5e491d80.js",
     "static/js/453.ddb74af9.chunk.js": "/ticketsapp_ReactJS/static/js/453.ddb74af9.chunk.js",
     "index.html": "/ticketsapp_ReactJS/index.html",
-    "main.58a234df.css.map": "/ticketsapp_ReactJS/static/css/main.58a234df.css.map",
-    "main.cf1e7b4e.js.map": "/ticketsapp_ReactJS/static/js/main.cf1e7b4e.js.map",
+    "main.b1ff1670.css.map": "/ticketsapp_ReactJS/static/css/main.b1ff1670.css.map",
+    "main.5e491d80.js.map": "/ticketsapp_ReactJS/static/js/main.5e491d80.js.map",
     "453.ddb74af9.chunk.js.map": "/ticketsapp_ReactJS/static/js/453.ddb74af9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.58a234df.css",
-    "static/js/main.cf1e7b4e.js"
+    "static/css/main.b1ff1670.css",
+    "static/js/main.5e491d80.js"
   ]
 }
