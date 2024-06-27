@@ -70,6 +70,7 @@ function Filter() {
         <>
             <div className="filter">
                 <h2>КОЛИЧЕСТВО ПЕРЕСАДОК</h2>
+                <span className='explain'>НАЖМИТЕ ЛЮЮУЮ КНОПКУ.</span>
                 <div className="box">
                     <input
                         type="checkbox"
